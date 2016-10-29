@@ -2,7 +2,6 @@
   "name": "webCV",
   "version": "0.0.1",
   "description": "Personal web app using GraphQL Github API, React & Redux",
-  "main": "index.js",
   "author": "Iván Rodríguez <frivanrodriguez@gmail.com>",
   "license": "MIT",
   "scripts": {
