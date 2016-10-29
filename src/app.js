@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const SimpleComponent = props => <div>{props.foo}</div>;
-
-SimpleComponent.propTypes = { foo: React.PropTypes.string.isRequired };
+import SimpleComponent from './components/SimpleComponent';
 
 ReactDOM.render(< SimpleComponent foo="Hello" message="React Demo" / >,
     document.querySelector('.js-app')
