@@ -22,6 +22,5 @@ module.exports = {
     output: {
         filename: 'app.dist.js',
         path: DIST_PATH,
-        publicPath: '/assets/',
     },
 };

@@ -7,7 +7,9 @@
   "scripts": {
     "babel": "babel",
     "webpack": "webpack",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --hot --inline --colors --progress --content-base src/",
+    "build-prod": "webpack -p && cp src/index.html dist/index.html"
   },
   "dependencies": {
     "react": "^15.3.2",
