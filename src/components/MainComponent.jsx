@@ -3,14 +3,29 @@ import radium from 'radium';
 
 import Header from './Header/Header';
 
-const styles = {};
+const { Style, StyleRoot } = radium;
+
+/*eslint-disable*/
+const styles = {
+  body: {
+    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+    margin: 0,
+  },
+  mediaQueries: {
+    '(max-width: 600px)': { body: { background: 'gray' } },
+    '(max-width: 400px)': {
+      body: { background: 'blue' },
+      'p, h1': { color: 'white' },
+    },
+  },
+};
+/*eslint-enable*/
 
 const MainComponent = () =>
-  <div>
+  < StyleRoot >
     < Header headerType="primary" message="React Demo" / >
-    <div style={[styles.base]}>Body</div>
-  </div>;
-
-MainComponent.propTypes = { foo: React.PropTypes.string.isRequired };
+    <div>Body</div>
+    < Style rules={styles} />
+  </ StyleRoot >;
 
 export default radium(MainComponent);

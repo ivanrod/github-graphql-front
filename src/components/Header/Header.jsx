@@ -3,14 +3,16 @@ import radium from 'radium';
 
 const styles = {
   base: {
-    background: 'blue',
-    border: 0,
-    borderRadius: 4,
-    color: 'white',
-    padding: '1.5em',
+    backgroundColor: '#333',
+    color: '#ffa700',
+    height: '80px',
+    lineHeight: '80px',
+    padding: '0 20px',
+    textAlign: 'center',
+    width: '100%',
   },
 
-  primary: { background: '#0074D9' },
+  primary: { color: '#0074D9' },
 
   warning: { background: '#FF4136' },
 };
