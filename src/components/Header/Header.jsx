@@ -15,14 +15,14 @@ const styles = {
   warning: { background: '#FF4136' },
 };
 
-const SimpleComponent = props =>
+const Header = props =>
   <div
     style={[
       styles.base,
-      styles[props.foo],
+      styles[props.headerType],
     ]}
-  >{props.foo}</div>;
+  >{props.headerType}</div>;
 
-SimpleComponent.propTypes = { foo: React.PropTypes.string.isRequired };
+Header.propTypes = { headerType: React.PropTypes.string.isRequired };
 
-export default radium(SimpleComponent);
+export default radium(Header);

@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SimpleComponent from './components/SimpleComponent';
 
-const simpleComponent = < SimpleComponent foo="primary" message="React Demo" / >;
+import MainComponent from './components/MainComponent';
+
+const mainComponent = < MainComponent message="React Demo" / >;
 
 ReactDOM.render(
-    simpleComponent,
+    mainComponent,
     document.querySelector('.js-app')
 );

@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
+const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
 
 const DIST_PATH = path.resolve(__dirname, 'dist');
 const SOURCE_PATH = path.resolve(__dirname, 'src');
