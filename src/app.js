@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SimpleComponent from './components/SimpleComponent';
 
-ReactDOM.render(< SimpleComponent foo="Hello" message="React Demo" / >,
+const simpleComponent = < SimpleComponent foo="primary" message="React Demo" / >;
+
+ReactDOM.render(
+    simpleComponent,
     document.querySelector('.js-app')
 );

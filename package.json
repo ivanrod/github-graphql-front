@@ -2,16 +2,22 @@
   "name": "webCV",
   "version": "0.0.1",
   "description": "Personal web app using GraphQL Github API, React & Redux",
+  "keywords": [
+    "React",
+    "GraphQL",
+    "Radium"
+  ],
   "author": "Iván Rodríguez <frivanrodriguez@gmail.com>",
   "license": "MIT",
   "scripts": {
     "babel": "babel",
     "webpack": "webpack",
     "lint": "eslint src",
-    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --hot --inline --colors --progress --content-base src/",
-    "build-prod": "webpack -p && cp src/index.html dist/index.html"
+    "serve": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --hot --inline --colors --progress --content-base src/",
+    "build": "webpack -p && cp src/index.html dist/index.html"
   },
   "dependencies": {
+    "radium": "^0.18.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
@@ -26,6 +32,7 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
+    "postcss-loader": "^1.1.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"

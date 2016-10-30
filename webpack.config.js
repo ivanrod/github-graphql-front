@@ -8,8 +8,8 @@ module.exports = {
     devtool: 'source-map',
     entry: [
       'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:8080', // WebpackDevServer host and port
-      'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
       `${SOURCE_PATH}/app.js`,
     ],
     module: {
@@ -26,7 +26,16 @@ module.exports = {
                 ],
             },
             test: /.jsx?$/,
-        }],
+        },
+        {
+          loaders: [
+            'style-loader',
+            'css-loader?importLoaders=1',
+            'postcss-loader',
+          ],
+          test: /\.css$/,
+        },
+      ],
     },
     output: {
         filename: 'app.dist.js',
