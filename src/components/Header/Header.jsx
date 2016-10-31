@@ -1,21 +1,7 @@
 import React from 'react';
 import radium from 'radium';
-
-const styles = {
-  base: {
-    backgroundColor: '#333',
-    color: '#ffa700',
-    height: '80px',
-    lineHeight: '80px',
-    padding: '0 20px',
-    textAlign: 'center',
-    width: '100%',
-  },
-
-  primary: { color: '#0074D9' },
-
-  warning: { background: '#FF4136' },
-};
+import { Grid, Cell } from 'radium-grid';
+import styles from './headerStyles';
 
 const Header = props =>
   <div
@@ -23,8 +9,20 @@ const Header = props =>
       styles.base,
       styles[props.headerType],
     ]}
-  >{props.headerType}</div>;
+  >
+    <Grid>
+      <Cell align="center" width="1/2">
+        <p>{props.title}</p>
+      </Cell>
+      <Cell align="center" width="1/2">
+        <p>Header buttons</p>
+      </Cell>
+    </Grid>
+  </div>;
 
-Header.propTypes = { headerType: React.PropTypes.string.isRequired };
+Header.propTypes = {
+  headerType: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string.isRequired,
+};
 
 export default radium(Header);

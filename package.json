@@ -17,7 +17,9 @@
     "build": "webpack -p && cp src/index.html dist/index.html"
   },
   "dependencies": {
+    "postcss-cssnext": "^2.8.0",
     "radium": "^0.18.1",
+    "radium-grid": "^2.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
@@ -32,6 +34,8 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-js-loader": "^0.1.2",
     "postcss-loader": "^1.1.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "webpack": "^1.13.3",

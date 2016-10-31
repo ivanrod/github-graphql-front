@@ -1,30 +1,23 @@
 import React from 'react';
 import radium from 'radium';
-
+import { Grid, Cell } from 'radium-grid';
 import Header from './Header/Header';
+import styles from './mainComponentStyles';
+
+// TODO: Add postcss-js & css-next
 
 const { Style, StyleRoot } = radium;
 
-/*eslint-disable*/
-const styles = {
-  body: {
-    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-    margin: 0,
-  },
-  mediaQueries: {
-    '(max-width: 600px)': { body: { background: 'gray' } },
-    '(max-width: 400px)': {
-      body: { background: 'blue' },
-      'p, h1': { color: 'white' },
-    },
-  },
-};
-/*eslint-enable*/
-
 const MainComponent = () =>
   < StyleRoot >
-    < Header headerType="primary" message="React Demo" / >
-    <div>Body</div>
+    <Grid>
+      <Cell width="1">
+        < Header headerType="primary" title="Header" / >
+      </Cell>
+      <Cell width="1">
+        <div>Body</div>
+      </Cell>
+    </Grid>
     < Style rules={styles} />
   </ StyleRoot >;
 

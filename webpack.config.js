@@ -28,12 +28,8 @@ module.exports = {
             test: /.jsx?$/,
         },
         {
-          loaders: [
-            'style-loader',
-            'css-loader?importLoaders=1',
-            'postcss-loader',
-          ],
-          test: /\.css$/,
+          loader: 'style!css!postcss-js!babel',
+          test: /\.css\.js$/,
         },
       ],
     },
