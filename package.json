@@ -12,7 +12,7 @@
   "scripts": {
     "babel": "babel",
     "webpack": "webpack",
-    "lint": "eslint src",
+    "lint": "eslint src/**/*.{jsx,js}",
     "serve": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --hot --inline --colors --progress --content-base src/",
     "build": "webpack -p && cp src/index.html dist/index.html"
   },
