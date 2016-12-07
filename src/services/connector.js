@@ -1,10 +1,37 @@
 const urlBase = 'http://localhost:3000/';
 
-function request({ endpoint }) {
-  const url = urlBase + endpoint;
-  const options = { mode: 'no-cors' };
+function checkStatus(response) {
+  if (response.ok) {
+    return response.json().catch(() => response);
+  }
 
-  return fetch(url, options);
+  const error = new Error(response.statusText);
+
+  error.status = response.status;
+  error.response = response;
+  throw error;
 }
 
-export default { request };
+function request({ endpoint, method, data }) {
+  const url = urlBase + endpoint;
+  const options = {
+    body: data,
+    method,
+  };
+
+  return fetch(url, options).then(checkStatus);
+}
+
+function get(endpoint) {
+  return request({ endpoint, method: 'GET' });
+}
+
+function post(endpoint) {
+  return request({ endpoint, method: 'POST' });
+}
+
+export default {
+  get,
+  post,
+  request,
+};
