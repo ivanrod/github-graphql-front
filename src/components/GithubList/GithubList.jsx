@@ -15,12 +15,16 @@ const GithubList = props =>
       </Cell>
       <Cell>
         <ul>
-          {props.repositories.map((repository, index) => <li key={index}>{repository}</li>)}
+          {props.repositories.map((repository, index) => {
+            if (repository) {
+              return <li key={index}>{repository.name}</li>;
+            }
+          })}
         </ul>
       </Cell>
     </Grid>
   </div>;
 
-GithubList.propTypes = { repositories: React.PropTypes.arrayOf(React.PropTypes.string) };
+GithubList.propTypes = { repositories: React.PropTypes.arrayOf(React.PropTypes.object) };
 
 export default radium(GithubList);
