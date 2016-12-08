@@ -22,7 +22,8 @@
     "radium-grid": "^2.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "shortid": "^2.2.6"
+    "shortid": "^2.2.6",
+    "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",

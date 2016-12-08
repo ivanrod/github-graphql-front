@@ -7,6 +7,7 @@ const SOURCE_PATH = path.resolve(__dirname, 'src');
 module.exports = {
     devtool: 'source-map',
     entry: [
+      'whatwg-fetch',
       'react-hot-loader/patch',
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
