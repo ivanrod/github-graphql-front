@@ -1,3 +1,4 @@
+import shortid from 'shortid';
 import React from 'react';
 import radium from 'radium';
 import styles from './githubListStyles';
@@ -15,7 +16,16 @@ const GithubList = props =>
       <ul style={[styles.repoList]}>
         {props.repositories.map((repository, index) => {
           if (repository) {
-            return <li key={index}><a style={[styles.repoListItem]}>{repository.name}</a></li>;
+            const generatedId = shortid.generate();
+
+            return (
+              <li key={index}>
+                <label htmlFor={generatedId} style={[styles.repoListItem]}>
+                  <input id={generatedId} type="checkbox" />
+                  {repository.name}
+                </label>
+              </li>
+            );
           }
 
           return null;
