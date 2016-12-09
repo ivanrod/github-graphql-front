@@ -5,6 +5,7 @@ import { Grid, Cell } from 'radium-grid';
 // Components
 import Header from './Header/Header';
 import GithubList from './GithubList/GithubList';
+import GithubChart from './GithubChart/GithubChart';
 
 // Services
 import connector from '../services/connector';
@@ -38,6 +39,9 @@ class MainComponent extends React.Component {
             <div>
               < GithubList repositories={this.state.repositories} />
             </div>
+          </Cell>
+          <Cell>
+            < GithubChart />
           </Cell>
         </Grid>
         < Style rules={styles} />
