@@ -1,5 +1,6 @@
 import React from 'react';
 import radium from 'radium';
+import NVD3Chart from 'react-nvd3';
 import styles from './githubChartStyles';
 
 const GithubChart = props =>
@@ -9,9 +10,9 @@ const GithubChart = props =>
     ]}
   >
     <h3>GithubChart</h3>
-    <p>{props.repositories}</p>
+    <NVD3Chart id="barChart" type="discreteBarChart" datum={props.datum} x="label" y="value" />
   </div>;
 
-GithubChart.propTypes = { repositories: React.PropTypes.arrayOf(React.PropTypes.object) };
+GithubChart.propTypes = { datum: React.PropTypes.arrayOf(React.PropTypes.object) };
 
 export default radium(GithubChart);

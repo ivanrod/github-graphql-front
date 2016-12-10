@@ -22,6 +22,7 @@
     "radium-grid": "^2.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-nvd3": "^0.5.7",
     "shortid": "^2.2.6",
     "whatwg-fetch": "^2.0.1"
   },
