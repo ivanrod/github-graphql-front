@@ -25,9 +25,25 @@ class MainComponent extends React.Component {
       selectedRepositories: [],
     };
 
-    connector.get('repositories/1')
-    .then((repositories) => {
-      this.setState({ repositories: repositories.repositories });
+    this.handleSelectedChange = this.handleSelectedChange.bind(this);
+    this.fetchRepositories();
+  }
+
+  async fetchRepositories() {
+    const repositories = await connector.get('repositories/1');
+
+    this.setState((prevState) => {
+      const newState = Object.assign({}, prevState, { repositories: repositories.repositories });
+
+      return newState;
+    });
+  }
+
+  handleSelectedChange(repositories) {
+    this.setState((prevState) => {
+      const newState = Object.assign({}, prevState, { selectedRepositories: repositories });
+
+      return newState;
     });
   }
 
@@ -40,7 +56,10 @@ class MainComponent extends React.Component {
           </Cell>
           <Cell width="1">
             <div>
-              < GithubList repositories={this.state.repositories} />
+              < GithubList
+                repositories={this.state.repositories}
+                onSelectedChange={this.handleSelectedChange}
+              />
             </div>
           </Cell>
           <Cell>
