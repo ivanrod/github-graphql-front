@@ -20,7 +20,10 @@ class MainComponent extends React.Component {
   constructor() {
     super();
 
-    this.state = { repositories: [] };
+    this.state = {
+      repositories: [],
+      selectedRepositories: [],
+    };
 
     connector.get('repositories/1')
     .then((repositories) => {
@@ -41,7 +44,7 @@ class MainComponent extends React.Component {
             </div>
           </Cell>
           <Cell>
-            < GithubChart />
+            < GithubChart repositories={this.state.selectedRepositories} />
           </Cell>
         </Grid>
         < Style rules={styles} />
