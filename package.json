@@ -12,6 +12,8 @@
   "scripts": {
     "babel": "babel",
     "webpack": "webpack",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "lint": "eslint src/**/*.{jsx,js}",
     "serve": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --hot --inline --colors --progress --content-base src/",
     "build": "webpack -p && cp src/index.html dist/index.html"
@@ -28,15 +30,18 @@
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
+    "babel-jest": "^17.0.2",
     "babel-loader": "^6.2.7",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-2": "^6.18.0",
+    "enzyme": "^2.6.0",
     "eslint": "^3.9.0",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
+    "jest": "^17.0.3",
     "postcss-cssnext": "^2.8.0",
     "postcss-js-loader": "^0.1.2",
     "postcss-loader": "^1.1.0",
