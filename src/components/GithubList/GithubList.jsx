@@ -3,6 +3,10 @@ import React from 'react';
 import radium from 'radium';
 import styles from './githubListStyles';
 
+const handleChange = function handleChange(event) {
+  console.log(event);
+};
+
 const GithubList = props =>
   <div
     style={[
@@ -21,7 +25,11 @@ const GithubList = props =>
             return (
               <li key={index}>
                 <label htmlFor={generatedId} style={[styles.repoListItem]}>
-                  <input id={generatedId} type="checkbox" />
+                  <input
+                    id={generatedId}
+                    type="checkbox"
+                    onChange={handleChange}
+                  />
                   {repository.name}
                 </label>
               </li>

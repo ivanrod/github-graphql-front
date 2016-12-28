@@ -11,3 +11,11 @@
 </html>
 
 <script src="app.dist.js"></script>
+<script>
+  // Load pre-caching Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('service-worker.js');
+    });
+  }
+</script>
