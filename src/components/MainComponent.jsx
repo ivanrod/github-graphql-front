@@ -39,12 +39,40 @@ class MainComponent extends React.Component {
     });
   }
 
-  handleSelectedChange(repositories) {
+  addSelectedRepository(repository) {
     this.setState((prevState) => {
-      const newState = Object.assign({}, prevState, { selectedRepositories: repositories });
+      const oldSelected = prevState.selectedRepositories;
+      const selectedRepositories = [repository, ...oldSelected];
+      const newState = Object.assign({}, prevState, { selectedRepositories });
 
       return newState;
     });
+  }
+
+  removeSelectedRepository(repository) {
+    this.setState((prevState) => {
+      const oldSelected = prevState.selectedRepositories;
+      const index = oldSelected.indexOf(repository);
+      const selectedRepositories = [
+        ...oldSelected.slice(0, index),
+        ...oldSelected.slice(index + 1),
+      ];
+      const newState = Object.assign({}, prevState, { selectedRepositories });
+
+      return newState;
+    });
+  }
+
+  handleSelectedChange(event, repository) {
+    const { target: { checked } } = event;
+
+    if (checked) {
+      this.addSelectedRepository(repository);
+
+      return;
+    }
+
+    this.removeSelectedRepository(repository);
   }
 
   render() {
