@@ -31,6 +31,8 @@ const styles = {
 
   boxedInner: {
     color: '#666',
+    height: '10rem',
+    overflow: 'scroll',
     background: '#fff',
     border: '1px solid #d8d8d8',
     borderBottomRightRadius: '3px',
