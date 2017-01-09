@@ -54,8 +54,8 @@ class MainComponent extends React.Component {
       const oldSelected = prevState.selectedRepositories;
       const index = oldSelected.indexOf(repository);
       const selectedRepositories = [
-        ...oldSelected.slice(0, index),
-        ...oldSelected.slice(index + 1),
+        ...oldSelected.slice(0, index), // eslint-disable-line no-magic-numbers
+        ...oldSelected.slice(index + 1), // eslint-disable-line no-magic-numbers
       ];
       const newState = Object.assign({}, prevState, { selectedRepositories });
 
@@ -82,7 +82,11 @@ class MainComponent extends React.Component {
           <Cell width="1">
             < Header headerType="primary" title="Header" / >
           </Cell>
-          <Cell width="1">
+          <Cell
+            smallCellWidth="1"
+            mediumCellWidth="1/2"
+            align="center"
+          >
             <div>
               < GithubList
                 repositories={this.state.repositories}
@@ -90,7 +94,11 @@ class MainComponent extends React.Component {
               />
             </div>
           </Cell>
-          <Cell>
+          <Cell
+            smallCellWidth="1"
+            mediumCellWidth="1/2"
+            align="center"
+          >
             < GithubChart repositories={this.state.selectedRepositories} />
           </Cell>
         </Grid>

@@ -19,6 +19,7 @@
     "build": "webpack -p && cp src/index.html dist/index.html"
   },
   "dependencies": {
+    "moment": "^2.17.1",
     "postcss-cssnext": "^2.8.0",
     "radium": "^0.18.1",
     "radium-grid": "^2.0.3",
